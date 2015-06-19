@@ -17,13 +17,16 @@ namespace SaichanSafety
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem newAutoArmFileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem loadAutoArmToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutSaichanToolStripMenuItem;
 		private System.Windows.Forms.RadioButton radioButton1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.ToolStripMenuItem saveAutoArmToolStripMenuItem;
+		private System.Windows.Forms.RadioButton radioButton2;
+		private System.Windows.Forms.RadioButton radioButton3;
+		private System.Windows.Forms.Label label1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -50,13 +53,16 @@ namespace SaichanSafety
 			this.button1 = new System.Windows.Forms.Button();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.newAutoArmFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.loadAutoArmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.saveAutoArmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutSaichanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.radioButton3 = new System.Windows.Forms.RadioButton();
+			this.label1 = new System.Windows.Forms.Label();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -78,30 +84,29 @@ namespace SaichanSafety
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(495, 24);
-			this.menuStrip1.TabIndex = 1;
+			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.newAutoArmFileToolStripMenuItem,
-			this.loadAutoArmToolStripMenuItem});
+			this.loadAutoArmToolStripMenuItem,
+			this.saveAutoArmToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
-			// 
-			// newAutoArmFileToolStripMenuItem
-			// 
-			this.newAutoArmFileToolStripMenuItem.Name = "newAutoArmFileToolStripMenuItem";
-			this.newAutoArmFileToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-			this.newAutoArmFileToolStripMenuItem.Text = "New AutoArm";
-			this.newAutoArmFileToolStripMenuItem.Click += new System.EventHandler(this.NewAutoArmFileToolStripMenuItemClick);
 			// 
 			// loadAutoArmToolStripMenuItem
 			// 
 			this.loadAutoArmToolStripMenuItem.Name = "loadAutoArmToolStripMenuItem";
 			this.loadAutoArmToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.loadAutoArmToolStripMenuItem.Text = "Load AutoArm ";
+			// 
+			// saveAutoArmToolStripMenuItem
+			// 
+			this.saveAutoArmToolStripMenuItem.Name = "saveAutoArmToolStripMenuItem";
+			this.saveAutoArmToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+			this.saveAutoArmToolStripMenuItem.Text = "Save AutoArm";
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -116,32 +121,66 @@ namespace SaichanSafety
 			this.aboutSaichanToolStripMenuItem.Name = "aboutSaichanToolStripMenuItem";
 			this.aboutSaichanToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.aboutSaichanToolStripMenuItem.Text = "About Saichan";
+			this.aboutSaichanToolStripMenuItem.Click += new System.EventHandler(this.AboutSaichanToolStripMenuItemClick);
 			// 
 			// radioButton1
 			// 
 			this.radioButton1.Location = new System.Drawing.Point(153, 25);
 			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(104, 24);
+			this.radioButton1.Size = new System.Drawing.Size(147, 24);
 			this.radioButton1.TabIndex = 2;
 			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "radioButton1";
+			this.radioButton1.Text = "Proxies (limited sucess)";
 			this.radioButton1.UseVisualStyleBackColor = true;
 			// 
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
+			// radioButton2
+			// 
+			this.radioButton2.Location = new System.Drawing.Point(153, 55);
+			this.radioButton2.Name = "radioButton2";
+			this.radioButton2.Size = new System.Drawing.Size(128, 24);
+			this.radioButton2.TabIndex = 3;
+			this.radioButton2.TabStop = true;
+			this.radioButton2.Text = "Death By Process";
+			this.radioButton2.UseVisualStyleBackColor = true;
+			// 
+			// radioButton3
+			// 
+			this.radioButton3.Location = new System.Drawing.Point(153, 87);
+			this.radioButton3.Name = "radioButton3";
+			this.radioButton3.Size = new System.Drawing.Size(118, 24);
+			this.radioButton3.TabIndex = 4;
+			this.radioButton3.TabStop = true;
+			this.radioButton3.Text = "Death By Services";
+			this.radioButton3.UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(13, 26);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(100, 53);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Free your internet with SaichanSafety.";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(495, 123);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.radioButton3);
+			this.Controls.Add(this.radioButton2);
 			this.Controls.Add(this.radioButton1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.menuStrip1);
 			this.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
+			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Text = "SaichanSafety";
 			this.menuStrip1.ResumeLayout(false);

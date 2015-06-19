@@ -1,24 +1,23 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: 1062389
- * Date: 5/15/2015
- * Time: 1:42 PM
+ * User: Joey Pence
+ * Date: 6/17/2015
+ * Time: 9:24 PM
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace SaichanSafety
 {
 	/// <summary>
-	/// Description of MainForm.
+	/// Description of about.
 	/// </summary>
-	public partial class MainForm : Form
+	public partial class about : Form
 	{
-		public MainForm()
+		public about()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -28,13 +27,10 @@ namespace SaichanSafety
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
-		    
 		}
-		void NewAutoArmFileToolStripMenuItemClick(object sender, EventArgs e)
+		void Button1Click(object sender, EventArgs e)
 		{
-			
-			
+			this.Close();
 		}
-		
 	}
 }
